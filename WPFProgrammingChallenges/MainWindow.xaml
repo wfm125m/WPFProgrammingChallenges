@@ -4,6 +4,9 @@
         Title="MainWindow" Height="350" Width="525">
     <Grid>
         <TabControl>
+            <TabItem Header="00 - Name Generator">
+                
+            </TabItem>
         </TabControl>
     </Grid>
 </Window>
