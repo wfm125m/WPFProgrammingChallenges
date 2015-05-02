@@ -1,0 +1,33 @@
+﻿<UserControl x:Class="WPFProgrammingChallenges.View.LowerHigherView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:intr="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity"
+             xmlns:ViewModel="clr-namespace:WPFProgrammingChallenges.ViewModel"
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300" >
+    <UserControl.DataContext>
+        <ViewModel:LowerHigherVM/>
+    </UserControl.DataContext>
+    <intr:Interaction.Triggers>
+        <intr:EventTrigger EventName="Loaded">
+            <intr:InvokeCommandAction Command="{Binding ResetCommand}"/>
+        </intr:EventTrigger>
+    </intr:Interaction.Triggers>
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="27"/>
+            <RowDefinition Height="27"/>
+            <RowDefinition Height="27"/>
+            <RowDefinition Height="27"/>
+            <RowDefinition Height="27"/>
+        </Grid.RowDefinitions>
+        <Label Grid.Row="0"  Content="Enter the number below" HorizontalAlignment="Center"/>
+        <TextBox Grid.Row="1"  Width="100" Margin="5" Text="{Binding Number}" HorizontalAlignment="Center" PreviewTextInput="NumericOnly" />
+        <Button Grid.Row="2"  Content="Chceck number" HorizontalAlignment="Center" Margin="4" Command="{Binding CheckNumberCommand}"/>
+        <Label Grid.Row="3"  Content="Entered number is " HorizontalAlignment="Center"/>
+        <Label Grid.Row="4"  Content="{Binding Result}" HorizontalAlignment="Center" TextElement.Foreground="{Binding TextColor}" />
+    </Grid>
+</UserControl>

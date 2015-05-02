@@ -9,7 +9,10 @@
     <Grid>
         <TabControl>
             <TabItem Header="00 - Name Generator">
-                <views:NameGenerator/>
+                <views:NameGeneratorView/>
+            </TabItem>
+            <TabItem Header="01 - Lower Higher Game">
+                <views:LowerHigherView/>
             </TabItem>
         </TabControl>
     </Grid>

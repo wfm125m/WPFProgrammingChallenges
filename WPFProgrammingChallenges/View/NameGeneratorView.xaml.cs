@@ -18,9 +18,9 @@ namespace WPFProgrammingChallenges.View
     /// <summary>
     /// Interaction logic for NameGenerator.xaml
     /// </summary>
-    public partial class NameGenerator : UserControl
+    public partial class NameGeneratorView : UserControl
     {
-        public NameGenerator()
+        public NameGeneratorView()
         {
             InitializeComponent();
         }
