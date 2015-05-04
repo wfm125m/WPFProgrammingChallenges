@@ -18,6 +18,8 @@ namespace WPFProgrammingChallenges.ViewModel
             set { name = value; }
         }
 
+        public System.Collections.ObjectModel.ObservableCollection<string> GeneratedNameList { get; set; }
+
         private int nameLength = 10;
 
         public int NameLength
@@ -51,6 +53,8 @@ namespace WPFProgrammingChallenges.ViewModel
 
         public void GenerateName()
         {
+            if (GeneratedNameList == null)
+                GeneratedNameList = new System.Collections.ObjectModel.ObservableCollection<string>();
             //Reset generated name
             name = string.Empty;
             //start new Rand generator
@@ -67,6 +71,8 @@ namespace WPFProgrammingChallenges.ViewModel
                 char randChar = GetRandomCharacter(alpha, rand);
                 name += randChar;
             }
+            GeneratedNameList.Add(name);
+            RaisePropertyChangedEvent("GeneratedNameList");
         }
 
         public void ShowGeneratedName()

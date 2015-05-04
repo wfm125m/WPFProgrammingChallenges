@@ -3,8 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-                          xmlns:ViewModel="clr-namespace:WPFProgrammingChallenges.ViewModel"
-
+             xmlns:ViewModel="clr-namespace:WPFProgrammingChallenges.ViewModel"
              mc:Ignorable="d" 
              d:DesignHeight="300" d:DesignWidth="300">
     <UserControl.DataContext>
@@ -40,6 +39,7 @@
             </Grid>
         </GroupBox>
         <Button Content="Generate name" Command="{Binding GenerateNameCommand}" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="0,0,0,10"  Width="100"/>
+        <ListBox HorizontalAlignment="Stretch" Margin="10,145,10,40" Height="auto" VerticalAlignment="Stretch" ItemsSource="{Binding GeneratedNameList, Mode=TwoWay}"/>
 
     </Grid>
 </UserControl>

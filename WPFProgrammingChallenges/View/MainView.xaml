@@ -14,6 +14,12 @@
             <TabItem Header="01 - Lower Higher Game">
                 <views:LowerHigherView/>
             </TabItem>
+            <TabItem Header="02 - Temperature converter">
+                <views:TemperatureConverterView/>
+            </TabItem>
+            <TabItem Header="03 - Age Calculator">
+                <views:AgeCalculatorView/>
+            </TabItem>
         </TabControl>
     </Grid>
 </UserControl>
