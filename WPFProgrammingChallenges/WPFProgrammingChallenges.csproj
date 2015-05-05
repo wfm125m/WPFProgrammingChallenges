@@ -57,6 +57,7 @@
     <Compile Include="Helpers\HelperMethods.cs" />
     <Compile Include="Helpers\PropertyChangedHandler.cs" />
     <Compile Include="Helpers\RelayCommand.cs" />
+    <Compile Include="Model\AgeModel.cs" />
     <Compile Include="ViewModel\AgeCalculatorVM.cs" />
     <Compile Include="ViewModel\LowerHigherVM.cs" />
     <Compile Include="ViewModel\MainVM.cs" />
@@ -139,7 +140,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Documents for learning\" />
-    <Folder Include="Model\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

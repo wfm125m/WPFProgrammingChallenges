@@ -11,7 +11,18 @@
     </UserControl.DataContext>
     <Grid>
         <GroupBox Header="Please select your birthdate" HorizontalAlignment="Stretch" Margin="10,10,10,0" VerticalAlignment="Top" Height="60">
-            <DatePicker HorizontalAlignment="Stretch" Margin="5" VerticalAlignment="Stretch" Width="260"/>
+            <DatePicker HorizontalAlignment="Stretch" Margin="5" VerticalAlignment="Stretch" Width="260" SelectedDate="{Binding BirthDate}"/>
+        </GroupBox>
+        <Button Content="Calculate your age" HorizontalAlignment="Center" Margin="0,80,0,0" VerticalAlignment="Top" Width="125" Command="{Binding CalculateAgeCommand}"/>
+        <GroupBox Header="Your age in:" HorizontalAlignment="Stretch" Margin="10,105,10,10" VerticalAlignment="Top" Height="185" Visibility="{Binding ControlsVisible}">
+            <Grid Margin="5">
+                <Label Content="{Binding FullAge}" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Visibility="{Binding ControlsVisible}"/>
+                <Label Content="{Binding AgeDays}" HorizontalAlignment="Left" Margin="10,36,0,0" VerticalAlignment="Top" Visibility="{Binding ControlsVisible}"/>
+                <Label Content="{Binding AgeHours}" HorizontalAlignment="Left" Margin="10,62,0,0" VerticalAlignment="Top" Visibility="{Binding ControlsVisible}"/>
+                <Label Content="{Binding AgeMinutes}" HorizontalAlignment="Left" Margin="10,77,0,0" VerticalAlignment="Top" Visibility="{Binding ControlsVisible}"/>
+                <Label Content="{Binding AgeSeconds}" HorizontalAlignment="Left" Margin="10,92,0,0" VerticalAlignment="Top" Visibility="{Binding ControlsVisible}"/>
+
+            </Grid>  
         </GroupBox>
     </Grid>
 </UserControl>
