@@ -7,7 +7,7 @@
              mc:Ignorable="d" 
              d:DesignHeight="300" d:DesignWidth="300">
     <Grid>
-        <TabControl>
+        <TabControl FontSize="12">
             <TabItem Header="00 - Name Generator">
                 <views:NameGeneratorView/>
             </TabItem>
@@ -19,6 +19,9 @@
             </TabItem>
             <TabItem Header="03 - Age Calculator">
                 <views:AgeCalculatorView/>
+            </TabItem>
+            <TabItem Header="05 - FizzBuzz">
+                <views:FizzBuzzView />
             </TabItem>
         </TabControl>
     </Grid>

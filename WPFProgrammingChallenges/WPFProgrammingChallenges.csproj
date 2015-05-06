@@ -59,12 +59,16 @@
     <Compile Include="Helpers\RelayCommand.cs" />
     <Compile Include="Model\AgeModel.cs" />
     <Compile Include="ViewModel\AgeCalculatorVM.cs" />
+    <Compile Include="ViewModel\FizzBuzzVM.cs" />
     <Compile Include="ViewModel\LowerHigherVM.cs" />
     <Compile Include="ViewModel\MainVM.cs" />
     <Compile Include="ViewModel\NameGenerationVM.cs" />
     <Compile Include="ViewModel\TemperatureConverterVM.cs" />
     <Compile Include="View\AgeCalculatorView.xaml.cs">
       <DependentUpon>AgeCalculatorView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\FizzBuzzView.xaml.cs">
+      <DependentUpon>FizzBuzzView.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\LowerHigherView.xaml.cs">
       <DependentUpon>LowerHigherView.xaml</DependentUpon>
@@ -91,6 +95,10 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="View\AgeCalculatorView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\FizzBuzzView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
