@@ -30,5 +30,10 @@ namespace WPFProgrammingChallenges.View
             e.Handled = Helpers.HelperMethods.IsDouble(e.Text);
 
         }
+
+        private void ComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
     }
 }

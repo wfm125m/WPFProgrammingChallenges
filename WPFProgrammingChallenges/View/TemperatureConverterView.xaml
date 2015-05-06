@@ -15,12 +15,12 @@
                 <Label Content="Input temperature type:" HorizontalAlignment="Left" VerticalAlignment="Top"/>
 
                 <Label Content="Output temperature type:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,26,0,0"/>
-                <ComboBox HorizontalAlignment="Left" Margin="151,4,0,0" VerticalAlignment="Top" Width="110" SelectedIndex="{Binding SelectedInput}">
+                <ComboBox HorizontalAlignment="Left" Margin="151,4,0,0" VerticalAlignment="Top" Width="110" SelectedIndex="{Binding SelectedInput}" SelectedItem="{Binding SelectedInput}">
                     <ComboBoxItem Content="Celcius"/>
                     <ComboBoxItem Content="Kelvin"/>
                     <ComboBoxItem Content="Farenheit"/>
                 </ComboBox>
-                <ComboBox HorizontalAlignment="Left" Margin="151,31,0,0" VerticalAlignment="Top" Width="110" SelectedIndex="{Binding SelectedOutput}">
+                <ComboBox HorizontalAlignment="Left" Margin="151,31,0,0" VerticalAlignment="Top" Width="110" SelectedIndex="{Binding SelectedOutput}" SelectedItem="{Binding SelectedOutput}">
                     <ComboBoxItem Content="Celcius"/>
                     <ComboBoxItem Content="Kelvin"/>
                     <ComboBoxItem Content="Farenheit"/>

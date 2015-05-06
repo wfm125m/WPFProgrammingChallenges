@@ -24,7 +24,6 @@ namespace WPFProgrammingChallenges.ViewModel
         }
 
 
-        private string fullAge;
 
         public string FullAge
         {
@@ -34,35 +33,48 @@ namespace WPFProgrammingChallenges.ViewModel
            
         }
 
-        private string ageDays;
+        //private string ageDays;
 
-        public string AgeDays
-        {
-            get { return  string.Format("You live {0} days", age.Days); }
+        //public string AgeDays
+        //{
+        //    get { return  string.Format("You live {0} days",  age.Years*365 +  age.Days); }
             
-        }
+        //}
 
-        private string ageHours;
+        //private string ageHours;
 
-        public string AgeHours
+        //public string AgeHours
+        //{
+        //    get { return string.Format("You live {0} hours", AgeDays * 24 + age.Hours); }
+        //}
+
+        //private string ageMinutes;
+
+        //public string AgeMinutes
+        //{
+        //    get { return string.Format("You live {0} minutes", age.Minutes); }
+        //    set { ageMinutes = value; }
+        //}
+
+        //private string ageSeconds;
+
+        //public string AgeSeconds
+        //{
+        //    get { return string.Format("You live {0} days", age.Seconds); }
+        //    set { ageSeconds = value; }
+        //}
+
+        private decimal totalSeconds;
+
+        public string TotalSeconds
         {
-            get { return string.Format("You live {0} hours", age.Hours); }
-        }
-
-        private string ageMinutes;
-
-        public string AgeMinutes
-        {
-            get { return string.Format("You live {0} minutes", age.Minutes); }
-            set { ageMinutes = value; }
-        }
-
-        private string ageSeconds;
-
-        public string AgeSeconds
-        {
-            get { return string.Format("You live {0} days", age.Seconds); }
-            set { ageSeconds = value; }
+            get
+            {
+                totalSeconds = (age.Years * 356 - ((int)age.Years / 4)) * 24 * 60 * 60 + age.Months * 30 * 24 * 60 * 60 +
+                    age.Days * 24 * 60 * 60 + age.Hours * 60 * 60 + age.Minutes * 60 + age.Seconds;
+                return totalSeconds + " s";
+            }
+            //set { totalSeconds = value; }
         }
 
         private Visibility visible = Visibility.Hidden;
@@ -77,8 +89,36 @@ namespace WPFProgrammingChallenges.ViewModel
         private void StartAgeCounter()
         {
             visible = Visibility.Visible;
+            RegreshAge();
+            Start();
+           
+        }
+
+        private void RegreshAge()
+        {
             RaisePropertyChangedEvent("ControlsVisible");
             RaisePropertyChangedEvent("FullAge");
+            RaisePropertyChangedEvent("TotalSeconds");
+        }
+
+        private async void Start()
+        {
+            try
+            {
+                await Task.Run(() =>
+                {
+                    
+                    for (; ; )
+                    {
+                        System.Threading.Thread.Sleep(1000);
+                        RegreshAge();
+                    }
+                });
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
 

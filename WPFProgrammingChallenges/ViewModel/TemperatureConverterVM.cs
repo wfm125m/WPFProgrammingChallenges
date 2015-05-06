@@ -3,14 +3,39 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Input;
 using WPFProgrammingChallenges.Helpers;
 
 namespace WPFProgrammingChallenges.ViewModel
 {
     class TemperatureConverterVM : PropertyChangedHandler
     {
-        public int SelectedInput { get; set; }
-        public int SelectedOutput { get; set; }
+        private int selectedInput;
+        public int SelectedInput {
+            get
+            {
+                return selectedInput;
+            }
+            set
+            {
+                selectedInput = value;
+                RefreshTemperature();
+            }
+        }
+        private int selectedOutputput;
+
+        public int SelectedOutput
+        {
+            get
+            {
+                return selectedOutputput;
+            }
+            set
+            {
+                selectedOutputput = value;
+                RefreshTemperature();
+            }
+        }
 
         private double defaultKelvinTemperature = 273.15;
         private double inputTemp;
@@ -82,7 +107,32 @@ namespace WPFProgrammingChallenges.ViewModel
             }
             //set { outuptValue = value; }
         }
-        
-        
+
+        private void RefreshTemperature()
+        {
+            RaisePropertyChangedEvent("InputValue");
+            RaisePropertyChangedEvent("OutputValue");
+        }
+
+        #region Commands Declaration
+        private ICommand _RefreshTemperatureCommand;
+
+        public ICommand RefreshTemperatureCommand
+        {
+            get
+            {
+                if (_RefreshTemperatureCommand == null)
+                {
+                    _RefreshTemperatureCommand = new RelayCommand(
+                        param => RefreshTemperature(),
+                        param => true
+                    );
+                }
+                return _RefreshTemperatureCommand;
+            }
+        }
+
+
+        #endregion
     }
 }

@@ -11,7 +11,6 @@ namespace WPFProgrammingChallenges.Model
         public DateTime BirthDay { get; set; }
 
 
-        private int years;
 
         public int Years
         {
@@ -99,7 +98,8 @@ namespace WPFProgrammingChallenges.Model
             //set { seconds = value; }
         }
 
-
+    
+        
 
 
 
