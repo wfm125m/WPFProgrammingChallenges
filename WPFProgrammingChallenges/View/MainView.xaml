@@ -4,6 +4,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:views="clr-namespace:WPFProgrammingChallenges.View"
+             xmlns:resx="clr-namespace:WPFProgrammingChallenges.Resources"
              mc:Ignorable="d" 
              d:DesignHeight="300" d:DesignWidth="300">
     <Grid>
@@ -22,6 +23,9 @@
             </TabItem>
             <TabItem Header="05 - FizzBuzz">
                 <views:FizzBuzzView />
+            </TabItem>
+            <TabItem Header="14 - CollatzConjecture">  <!--ToolTip="{x:Static resx:Texts.CollatzConjectureToolTip}">-->
+                <views:CollatzConjectureView />
             </TabItem>
         </TabControl>
     </Grid>
